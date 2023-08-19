@@ -1,5 +1,8 @@
 # CONVCSV2JSON
 Convert a CSV file into JSON format based on CSV headers
+```bash
+pip install convcsv2json
+```
 ## Usage
 ```python
 from convcsv2json import csv2json
