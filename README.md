@@ -30,12 +30,12 @@ kewlcat,23
 ```json
 [
     {
-        "name": "kewl",
-        "age": "344"
+        "name": "kewldog",
+        "age": "12"
     },
     {
-        "name": "noice",
-        "age": "456"
+        "name": "kewlcat",
+        "age": "23"
     }
 ]
 ```

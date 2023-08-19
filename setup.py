@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name = "convcsv2json",
-    version = "0.5",
+    version = "1.5.1",
     author = "1337kid",
     author_email = "1337kid@proton.me",
     description = "Convert a CSV file into JSON format based on CSV headers",
@@ -12,7 +12,7 @@ setuptools.setup(
     project_urls = {'Source': 'https://github.com/1337kid/convcsv2json',},
     classifiers = [
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: OS Independent",
     ],
     packages = setuptools.find_packages(),

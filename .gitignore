@@ -1,0 +1,4 @@
+venv/
+dist/
+build/
+convcsv2json.egg-info/
