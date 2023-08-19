@@ -1,18 +1,21 @@
-# CSV2JSON
-![made with python](https://raw.githubusercontent.com/1337kid/FediPhish/main/img/made-with-python.svg)
-![hardstyle](https://raw.githubusercontent.com/1337kid/FediPhish/main/img/made-with-hardstyle.svg)
-
-## Installation
-```bash
-git clone https://github.com/1337kid/csv2json.git
-cd csv2json
-sudo make install
-```
+# CONVCSV2JSON
+Convert a CSV file into JSON format based on CSV headers
 ## Usage
+```python
+from convcsv2json import csv2json
+
+data=csv2json(
+    'sample.csv',        # CSV filename
+    intend=4,            # JSON intendation
+    numbered=True        # Set JSON data in numbered format or not
+    )
+print(data.conv()) # Print in JSON format
+data.export('export.json') # Export the data into a JSON file
 ```
-Usage  : csv2json infile outfile [indent]
-Example: csv2json test.csv outfile.json
-       : csv2json test.csv outfile.json 2
+```"intend" and "numbered" parameters are optional. By default, "intend" is set as None and "numbered" is set as False```
+```python
+from convcsv2json import csv2json
+print(csv2json('sample.csv',4).conv())
 ```
 ### Sample CSV
 ```
@@ -22,15 +25,14 @@ kewlcat,23
 ```
 ### Generated JSON
 ```json
-{
-    "1": {
-        "name": "kewldog",
-        "age": "12"
+[
+    {
+        "name": "kewl",
+        "age": "344"
     },
-    "2": {
-        "name": "kewlcat",
-        "age": "23"
+    {
+        "name": "noice",
+        "age": "456"
     }
-}
+]
 ```
-![csv2json](https://raw.githubusercontent.com/1337kid/csv2json/main/img/sc.png)
