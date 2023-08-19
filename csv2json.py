@@ -8,7 +8,7 @@ def banner():
  | |   \___  \ \ / /  __) |  | \___ \| | | |  \| |
  | |___ ___) |\ V /  / __/ |_| |___) | |_| | |\  |
   \____|____/  \_/  |_____\___/|____/ \___/|_| \_|
-        @1337kid             v1.1
+        @1337kid             v1.2
         ''')
 def help():
     print(Fore.CYAN+'''
@@ -27,15 +27,11 @@ def conv_csv(in_file,out_file,ind=4):
         col_prnt(f'"{in_file}" does not exists','err')
         sys.exit()
     with open(in_file) as f:
-        data=list(csv.reader(f))
-    fields=data[0]
+        data=list(csv.DictReader(f))
     d={}
     col_prnt(f'Generating JSON','info')
-    for i in range(1,len(data)):
-        d_tmp={}
-        for j in range(len(fields)):
-            d_tmp[fields[j]]=data[i][j]
-        d[i]=d_tmp
+    for i in range(len(data)):
+        d[i+1]=data[i]
     with open(out_file,'w') as jf:
         json.dump(d,jf,indent=ind)
     col_prnt(f'Saved to "{out_file}"','info')
