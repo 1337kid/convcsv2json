@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name = "convcsv2json",
-    version = "1.5.1",
+    version = "1.6",
     author = "1337kid",
     author_email = "1337kid@proton.me",
     description = "Convert a CSV file into JSON format based on CSV headers",

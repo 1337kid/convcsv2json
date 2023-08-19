@@ -1,4 +1,4 @@
-import json,csv,sys,os
+import json,csv,os
 
 class csv2json:
     dict_data={}
@@ -21,7 +21,7 @@ class csv2json:
             self.dict_data=data
         return self.dict_data
         
-    def conv(self):
+    def json(self):
         data = csv2json.__convtodict(self)
         if self.intend!=None: return json.dumps(data,indent=self.intend)
         else: return json.dumps(data)
