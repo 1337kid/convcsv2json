@@ -13,7 +13,6 @@ sudo make install
 Usage  : csv2json infile outfile [indent]
 Example: csv2json test.csv outfile.json
        : csv2json test.csv outfile.json 2
-Default indentation is 4
 ```
 ### Sample CSV
 ```

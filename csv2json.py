@@ -8,20 +8,19 @@ def banner():
  | |   \___  \ \ / /  __) |  | \___ \| | | |  \| |
  | |___ ___) |\ V /  / __/ |_| |___) | |_| | |\  |
   \____|____/  \_/  |_____\___/|____/ \___/|_| \_|
-        @1337kid             v1.2
+        @1337kid             v1.2.1
         ''')
 def help():
     print(Fore.CYAN+'''
     Usage  : csv2json infile outfile [indent]
     Example: csv2json test.csv outfile.json
            : csv2json test.csv outfile.json 2
-    Default indentation is 4
     ''')
     sys.exit()
 def col_prnt(msg,msg_i):
     if msg_i=='info':print(f'{Fore.YELLOW}[+] {Fore.GREEN}{msg}')
     elif msg_i=='err':print(f'{Back.RED+Fore.WHITE}{msg}{Style.RESET_ALL}')
-def conv_csv(in_file,out_file,ind=4):
+def conv_csv(in_file,out_file,ind):
     col_prnt(f'Opening "{in_file}"','info')
     if os.path.exists(in_file)==0:
         col_prnt(f'"{in_file}" does not exists','err')
@@ -33,14 +32,15 @@ def conv_csv(in_file,out_file,ind=4):
     for i in range(len(data)):
         d[i+1]=data[i]
     with open(out_file,'w') as jf:
-        json.dump(d,jf,indent=ind)
+        if ind!=None:json.dump(d,jf,indent=ind)
+        else:json.dump(d,jf)
     col_prnt(f'Saved to "{out_file}"','info')
     Style.RESET_ALL
 #=====
 try:
     banner()
     if len(sys.argv)<3:help()
-    elif len(sys.argv)==3:conv_csv(sys.argv[1],sys.argv[2])
+    elif len(sys.argv)==3:conv_csv(sys.argv[1],sys.argv[2],None)
     elif len(sys.argv)==4:conv_csv(sys.argv[1],sys.argv[2],int(sys.argv[3]))
 except KeyboardInterrupt:col_prnt('KeyboardInterrupt','err')
 except ValueError:col_prnt('"intent" argument must be an integer','err')
