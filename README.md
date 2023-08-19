@@ -1,4 +1,4 @@
-# FediPhish
+# CSV2JSON
 ![made with python](https://raw.githubusercontent.com/1337kid/FediPhish/main/img/made-with-python.svg)
 ![hardstyle](https://raw.githubusercontent.com/1337kid/FediPhish/main/img/made-with-hardstyle.svg)
 
